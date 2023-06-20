@@ -9,8 +9,8 @@
 #ifndef __SYLAR_LOG_H__
 #define __SYLAR_LOG_H__
 
-#include <stdarg.h>
-#include <stdint.h>
+#include <cstdarg>
+#include <cstdint>
 
 #include <fstream>
 #include <list>
@@ -100,6 +100,8 @@
  */
 #define SYLAR_LOG_FMT_FATAL(logger, fmt, ...) \
   SYLAR_LOG_FMT_LEVEL(logger, sylar::LogLevel::FATAL, fmt, __VA_ARGS__)
+
+#define SYLAR_LOG_ROOT() sylar::LoggerMgr::GetInstance()->getRoot()
 
 namespace sylar {
 
