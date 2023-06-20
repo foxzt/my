@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(LIB_SRC
         sylar/log.cc
         sylar/util.cc
-        sylar/config.h)
+        sylar/config.cpp)
 add_library(mylib STATIC ${LIB_SRC})
 set_target_properties(mylib PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
 
@@ -14,10 +14,10 @@ set_target_properties(mylib PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE
 add_executable(my main.cpp)
 
 add_executable(log_test tests/test.cc)
-target_link_libraries(log_test mylib)
+target_link_libraries(log_test PRIVATE mylib)
 set_target_properties(log_test PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 
 
 add_executable(config_test tests/test_config.cc)
-target_link_libraries(config_test mylib)
+target_link_libraries(config_test PRIVATE mylib)
 set_target_properties(config_test PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)

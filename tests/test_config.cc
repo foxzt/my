@@ -3,7 +3,9 @@
 //
 #include "../sylar/config.h"
 #include "../sylar/config.h"
+#include <iostream>
 
-int main(){
+int main() {
+    std::cout << "test" << std::endl;
     return 0;
 }
