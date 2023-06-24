@@ -7,5 +7,6 @@
 
 int main() {
     std::cout << "test" << std::endl;
+    std::cout << "测试一下网络" <<std::endl;
     return 0;
 }
